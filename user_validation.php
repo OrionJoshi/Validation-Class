@@ -32,7 +32,7 @@
         }
 
         private function validateUsername() {
-            $val = trim($this->data['username'])  // Remove white space
+            $val = trim($this->data['username']);  // Remove white space
 
             if(empty($val)) {
                 $this->addError('username', 'username cannot be empty');
@@ -45,12 +45,12 @@
 
         private function validateEmail() {
 
-            $val = trim($this->data['email'])  // Remove white space
+            $val = trim($this->data['email']);  // Remove white space
 
             if(empty($val)) {
                 $this->addError('email', 'email cannot be empty');
             }else {
-                if(!filter_var($val, FILTER_VALIDATE_EMAIL))) {
+                if(!filter_var($val, FILTER_VALIDATE_EMAIL)) {
                     $this->addError('email', 'email must be a valid email');
                 } 
             }
