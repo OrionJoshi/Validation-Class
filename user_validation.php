@@ -44,6 +44,16 @@
 
         private function validateEmail() {
 
+            $val = trim($this->data['email'])  // Remove white space
+
+            if(empty($val)) {
+                $this->addError('email', 'email cannot be empty');
+            }else {
+                if(!filter_var($val, FILTER_VALIDATE_EMAIL))) {
+                    $this->addError('email', 'email must be a valid email');
+                } 
+            }
+
         }
 
         private function addError($key, $val) {
